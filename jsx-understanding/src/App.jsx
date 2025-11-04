@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const name='manasi';
+  const n1=10;
+  const n2=20;
+  const student={name:"ram", age:12, class:"7th"};
+  const names =['aa','bb','cc'];
+
+  function fun(){
+    return "keep studying"
+  }
+  const fun2=()=>{
+    return "wakeup early"
+  }
+  const fun3=()=>{
+    alert("button clicked")
+  }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <h1>hiiiii {name}</h1>
+    <h2>Addition : {n1+n2}</h2>
+    <hr />
+    <h2>student info : </h2>
+    Name : {student.name}<br/>
+    Age :{student.age} <br/>
+    class : {student.class} <br/>
+
+    <hr />
+    <ul>
+      {
+        names.map((name)=>
+        (
+          <li>{name}</li>
+        ))
+      }
+    </ul>
+    <hr />
+    <h2>{fun()}</h2>
+    <hr/>
+    <h2>{fun2()}</h2>
+
+    <button onClick={fun3}>submit</button>
+
+</>
   )
 }
 
-export default App
+export default App;
+
